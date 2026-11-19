@@ -68,7 +68,7 @@
       if (p < 1) requestAnimationFrame(tick);
     })(t0);
   }), { threshold: .5 });
-  $$('[data-to]').forEach(el => cio.observe(el));
+  $$('[data-to]').forEach(el => { if (!reduce) el.textContent = fmt(+(el.dataset.from || 0), +(el.dataset.dec || 0)); cio.observe(el); });
 
   // horizontal scroll section
   const hs = $('.hscroll');
