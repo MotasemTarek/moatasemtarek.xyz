@@ -355,3 +355,12 @@ footer{border-top:1px solid var(--line);padding:46px 0 34px}
 .site-card .phone.empty{background:radial-gradient(circle at 50% 40%,#2a2a2a,#151515)}
 .site-card .phone.empty img{width:auto;height:auto;max-width:58%;max-height:30%;object-fit:contain;border-radius:0;filter:grayscale(1) brightness(0) invert(1);opacity:.9}
 .site-card .phone.empty img.keep{filter:none;opacity:1;border-radius:14px;max-width:40%}
+@media (max-width:560px){
+  .brand-cell{aspect-ratio:auto;min-height:150px;padding:16px 14px}
+  .brand-cell .logo{padding:14px 0}
+  .brand-cell .logo img{max-height:44px;max-width:86%}
+  .brand-cell .logo img.keep{max-height:70px}
+  .brand-cell .info{flex-direction:column;align-items:flex-start;gap:4px}
+  .brand-cell .cat{font-size:9px;letter-spacing:.16em;line-height:1.5}
+  .brand-cell .go{display:none}
+}
