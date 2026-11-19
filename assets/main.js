@@ -7,8 +7,8 @@
   const bar = $('.loader .bar');
   if (bar) requestAnimationFrame(() => (bar.style.width = '100%'));
   const done = () => setTimeout(() => document.body.classList.add('loaded'), reduce ? 0 : 650);
-  document.readyState === 'complete' ? done() : addEventListener('load', done);
-  setTimeout(() => document.body.classList.add('loaded'), 3500);
+  document.readyState !== 'loading' ? done() : addEventListener('DOMContentLoaded', done);
+  setTimeout(() => document.body.classList.add('loaded'), 2500);
 
   // year
   $$('[data-year]').forEach(e => (e.textContent = new Date().getFullYear()));
