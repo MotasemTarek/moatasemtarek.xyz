@@ -15,13 +15,13 @@
 
   // nav
   const nav = $('.nav');
-  let lastY = 0;
-  addEventListener('scroll', () => {
-    const y = scrollY;
-    nav.classList.toggle('scrolled', y > 40);
-    nav.classList.toggle('hide', y > lastY && y > 400 && !document.body.classList.contains('menu-open'));
-    lastY = y;
-  }, { passive: true });
+  const setNav = () => {
+    nav.classList.toggle('scrolled', scrollY > 40);
+    document.documentElement.style.setProperty('--navh', nav.offsetHeight + 'px');
+  };
+  addEventListener('scroll', setNav, { passive: true });
+  addEventListener('resize', setNav);
+  setNav();
   $('.burger')?.addEventListener('click', () => document.body.classList.toggle('menu-open'));
   $$('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
 
